@@ -119,3 +119,124 @@
 </body>
 </html>
 ```
+
+
+###css
+
+```css
+/* ===== General Page Styling ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://images.unsplash.com/photo-1503264116251-35a269479413') no-repeat center center/cover;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Dark overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+/* ===== Layout ===== */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== Left Side: Form ===== */
+.form-section {
+    flex: 1;
+    max-width: 400px;
+    background: #ffffffcc;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 6px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 6px rgba(46, 125, 50, 0.4);
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2e7d32;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #1b5e20;
+}
+
+/* ===== Right Side: Info ===== */
+.info-section {
+    flex: 1.5;
+    margin-left: 40px;
+    background: #ffffffcc;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.info-section h3 {
+    color: #2e7d32;
+    margin-bottom: 12px;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
+    color: #2e7d32;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+```
