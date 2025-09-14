@@ -240,3 +240,38 @@ a:hover {
     text-decoration: underline;
 }
 ```
+
+###js
+
+```js
+console.log("script.jsis connected");
+document.getElementById("carbonForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload
+
+    // Get input values
+    const electricity = parseFloat(document.getElementById("electricity").value) || 0;
+    const car = parseFloat(document.getElementById("car").value) || 0;
+    const flights = parseFloat(document.getElementById("flights").value) || 0;
+
+    // Simple carbon footprint formula (example multipliers)
+    const electricityFactor = 0.92; // kg CO2 per kWh
+    const carFactor = 0.21; // kg CO2 per km
+    const flightFactor = 250; // kg CO2 per flight
+
+    // Calculate footprint
+    const monthlyFootprint = (electricity * electricityFactor) + (car * 4 * carFactor) + (flights * (flightFactor / 12));
+    const yearlyFootprint = monthlyFootprint * 12;
+
+    // Display result
+    const resultBox = document.getElementById("resultBox");
+    const resultText = document.getElementById("resultText");
+
+    resultText.innerHTML = `
+        🌍 <strong>${monthlyFootprint.toFixed(2)}</strong> kg CO₂ per month 
+        <br> 📅 <strong>${yearlyFootprint.toFixed(2)}</strong> kg CO₂ per year
+    `;
+
+    resultBox.style.display = "block";
+});
+
+```
